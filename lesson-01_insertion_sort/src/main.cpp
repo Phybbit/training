@@ -23,27 +23,21 @@ int* sort(int data[]) {
   return data;
 }
 
+void printArray(const std::string& title, int array[]) {
+  std::cout << title << ": ";
+  for (int i = 0; i < ELEMENTS_COUNT; i++) {
+    std::cout << array[i] << " ";
+  }
+  std::cout << std::endl << std::endl;
+}
+
 
 int main() {
-  // Initial data: hardcoded array of random values.
   int unsorted[] = { 2, 10, 17, 8, 13, 7, 9, 12, 11, 1 };
+  printArray("Input", unsorted);
 
-  // Print out our initial array.
-  std::cout << "Input: ";
-  for (int i = 0; i < ELEMENTS_COUNT; i++) {
-    std::cout << unsorted[i] << " ";
-  }
-  std::cout << std::endl << std::endl;
-
-  // Sort.
   int* sortedResult = sort(unsorted);
+  printArray("Output", sortedResult);
 
-  // Print out our sorted array.
-  std::cout << "Output: ";
-  for (int i = 0; i < ELEMENTS_COUNT; i++) {
-    std::cout << sortedResult[i] << " ";
-  }
-  std::cout << std::endl << std::endl;
-  
   return 0;
 }
