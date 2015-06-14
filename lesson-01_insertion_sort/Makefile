@@ -1,6 +1,6 @@
 CPP_FILES := $(wildcard src/*.cpp)
 OBJ_FILES := $(addprefix obj/,$(notdir $(CPP_FILES:.cpp=.o)))
-CC_FLAGS := -Wall
+CC_FLAGS := -g -std=c++11 -Wall -pedantic
 
 main: $(OBJ_FILES) ; g++ -o $@ $^
 
