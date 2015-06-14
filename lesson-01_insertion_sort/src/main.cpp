@@ -1,12 +1,9 @@
 #include <iostream>
+#include <vector>
 
-#define ELEMENTS_COUNT 10
-
-
-int* sort(int data[]) {
+void sort(std::vector<int>& data) {
   // Implement the insertion sort algorithm.
-
-  for (int i = 1; i < ELEMENTS_COUNT; i++) {
+  for (int i = 1; i < data.size(); i++) {
     int j = i;
 
     while (j > 0 && data[j-1] > data[j]) {
@@ -19,25 +16,35 @@ int* sort(int data[]) {
       j--;
     }
   }
-
-  return data;
 }
 
-void printArray(const std::string& title, int array[]) {
+void printArray(const std::string& title, const std::vector<int>& array) {
   std::cout << title << ": ";
-  for (int i = 0; i < ELEMENTS_COUNT; i++) {
+  for (int i = 0; i < array.size(); i++) {
     std::cout << array[i] << " ";
   }
   std::cout << std::endl << std::endl;
 }
 
+std::vector<int> readArray() {
+  std::cout << "Keep adding numbers. When you're done, write any letter and press enter." << std::endl;
+
+  std::vector<int> results;
+
+  int input;
+  while (std::cin >> input) {
+    results.push_back(input);
+  }
+
+  return results;
+}
 
 int main() {
-  int unsorted[] = { 2, 10, 17, 8, 13, 7, 9, 12, 11, 1 };
-  printArray("Input", unsorted);
+  std::vector<int> data = readArray();
+  printArray("Input", data);
 
-  int* sortedResult = sort(unsorted);
-  printArray("Output", sortedResult);
+  sort(data);
+  printArray("Output", data);
 
   return 0;
 }
