@@ -1,7 +1,7 @@
 #include "insertion_sort.h"
 
 
-void InsertionSort::sort(std::vector<int>& data) {
+void InsertionSort::sort(Vector& data) {
   // Implement the insertion sort algorithm.
   for (int i = 1; i < data.size(); i++) {
     int j = i;

@@ -5,7 +5,7 @@
 
 class InsertionSort : public ISort {
 public:
-  virtual void sort(std::vector<int>& data);
+  virtual void sort(Vector& data);
   virtual std::string name();
 };
 

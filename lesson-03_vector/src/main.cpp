@@ -1,12 +1,11 @@
 #include <iostream>
-#include <vector>
 
 #include "isort.h"
 #include "insertion_sort.h"
 #include "quicksort.h"
 
 
-void printArray(const std::string& title, const std::vector<int>& array) {
+void printArray(const std::string& title, const Vector& array) {
   std::cout << title << ": ";
   for (int i = 0; i < array.size(); i++) {
     std::cout << array[i] << " ";
@@ -14,10 +13,10 @@ void printArray(const std::string& title, const std::vector<int>& array) {
   std::cout << std::endl << std::endl;
 }
 
-std::vector<int> readArray() {
+Vector readArray() {
   std::cout << "Keep adding numbers. When you're done, write any letter and press enter." << std::endl;
 
-  std::vector<int> results;
+  Vector results;
 
   int input;
   while (std::cin >> input) {
@@ -28,7 +27,7 @@ std::vector<int> readArray() {
 }
 
 int main() {
-  std::vector<int> data = readArray();
+  Vector data = readArray();
   printArray("Input", data);
 
   //ISort* sortAlgorithm = new InsertionSort();

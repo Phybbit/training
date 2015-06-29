@@ -5,11 +5,11 @@ std::string Quicksort::name() {
   return "quicksort";
 }
 
-void Quicksort::sort(std::vector<int>& data) {
+void Quicksort::sort(Vector& data) {
   quicksort(data, 0, data.size() - 1);
 }
 
-void Quicksort::quicksort(std::vector<int>& data, int lowerLimit, int upperLimit) {
+void Quicksort::quicksort(Vector& data, int lowerLimit, int upperLimit) {
   if (lowerLimit >= upperLimit) {
     return;
   }
@@ -19,7 +19,7 @@ void Quicksort::quicksort(std::vector<int>& data, int lowerLimit, int upperLimit
   quicksort(data, pivot+1, upperLimit);
 }
 
-int Quicksort::partition(std::vector<int>& data, int lowerLimit, int upperLimit) {
+int Quicksort::partition(Vector& data, int lowerLimit, int upperLimit) {
   int pivotIndex = (lowerLimit + upperLimit) / 2;
   int pivotValue = data[pivotIndex];
 
