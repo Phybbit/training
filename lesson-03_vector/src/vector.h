@@ -5,6 +5,7 @@
 
 class Vector {
 public:
+  Vector();
   ~Vector();
 
   int& operator[](const int& index);
@@ -14,7 +15,12 @@ public:
   std::size_t size() const;
 
 private:
-  int data[1];
+  bool hasSpace() const;
+  void allocateMoreSpace();
+
+  int* data;
+  std::size_t usedSize;
+  std::size_t totalSize;
 };
 
 #endif
